@@ -6,7 +6,7 @@ use Elgg\Router\Middleware\SignedRequestGatekeeper;
 
 return [
 	'plugin' => [
-		'version' => '0.1',
+		'version' => '1.0',
 	],
 	'settings' => [
 		'code_validity' => 5,
