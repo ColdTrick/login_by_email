@@ -32,15 +32,13 @@ if ($code !== $session->get('login_by_email_code')) {
 
 if ((int) $session->get('login_by_email_code_expires') < time()) {
 	elgg_register_authentication_failure($user);
-	return elgg_error_response(elgg_echo('login_by_email:action:code:error:code_expired'));
+	return elgg_error_response(elgg_echo('login_by_email:action:code:error:code_expired'), elgg_generate_url('account:login'));
 }
 
 $forward = '';
 if ($session->has('login_by_email_referer')) {
 	$forward = (string) $session->get('login_by_email_referer');
 }
-
-error_log(var_export($forward, true));
 
 try {
 	elgg_login($user, $persistent);

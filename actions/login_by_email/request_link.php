@@ -31,25 +31,18 @@ if (empty($referer) && !empty($returntoreferer)) {
 $code = str_pad((string) random_int(0, 999999), 6, '0', STR_PAD_LEFT);
 
 $code_validity = (int) elgg_get_plugin_setting('code_validity', 'login_by_email');
+if ($code_validity < 1) {
+	$code_validity = 5;
+}
 
 $session->set('login_by_email_code', $code);
 $session->set('login_by_email_code_expires', Values::normalizeTimestamp("+{$code_validity} minutes"));
 $session->set('login_by_email_referer', $referer);
 $session->set('login_by_email_user_guid', $user->guid);
 
-$link = elgg_generate_url('default:login_by_email:confirm', [
-	'guid' => $user->guid,
-	'r' => $referer,
+$user->notify('request_login_code', $user, [
+	'code' => $code,
+	'referer' => $referer,
 ]);
-$link = elgg_http_get_signed_url($link, "+{$code_validity} minutes");
-
-$subject = elgg_echo('login_by_email:notification:request_link:subject', [$site->getDisplayName()], $user->getLanguage());
-$message = elgg_echo('login_by_email:notification:request_link:message', [
-	$site->getDisplayName(),
-	$link,
-	$code,
-], $user->getLanguage());
-
-notify_user($user->guid, 0, $subject, $message, [], ['email']);
 
 return elgg_ok_response('', elgg_echo('login_by_email:action:request_link:success'), elgg_generate_url('default:login_by_email:code'));

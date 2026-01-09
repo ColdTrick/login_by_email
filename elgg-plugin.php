@@ -1,6 +1,7 @@
 <?php
 
 use ColdTrick\LoginByEmail\Controllers\Confirm;
+use ColdTrick\LoginByEmail\Notifications\RequestLoginCodeHandler;
 use Elgg\Router\Middleware\LoggedOutGatekeeper;
 use Elgg\Router\Middleware\SignedRequestGatekeeper;
 
@@ -44,6 +45,13 @@ return [
 		'view_vars' => [
 			'input/form' => [
 				'\ColdTrick\LoginByEmail\Views::loginFormVars' => [],
+			],
+		],
+	],
+	'notifications' => [
+		'user' => [
+			'user' => [
+				'request_login_code' => RequestLoginCodeHandler::class,
 			],
 		],
 	],
