@@ -3,6 +3,7 @@
 use ColdTrick\LoginByEmail\Bootstrap;
 use ColdTrick\LoginByEmail\Controllers\Confirm;
 use ColdTrick\LoginByEmail\Notifications\RequestLoginCodeHandler;
+use ColdTrick\LoginByEmail\PluginSettings;
 use Elgg\Router\Middleware\LoggedOutGatekeeper;
 use Elgg\Router\Middleware\SignedRequestGatekeeper;
 
@@ -51,6 +52,11 @@ return [
 			'menu:login' => [
 				'\ColdTrick\LoginByEmail\Menus\Login::removePasswordReset' => [],
 				'\ColdTrick\LoginByEmail\Menus\Login::register' => [],
+			],
+		],
+		'setting' => [
+			'plugin' => [
+				PluginSettings::class => [],
 			],
 		],
 		'view_vars' => [

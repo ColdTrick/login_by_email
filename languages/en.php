@@ -10,6 +10,11 @@ return [
 	'login_by_email:settings:disable_classic_login' => "Disable classic login method",
 	'login_by_email:settings:disable_classic_login:help' => "No longer allow login by username/password",
 	
+	'login_by_email:settings:whitelist' => "Whitelist settings",
+	'login_by_email:settings:whitelist:description' => "When selecting users, only those users are allowed to use the login by e-mail feature. When no users are selected, all users are allowed to login by e-mail.",
+	'login_by_email:settings:whitelist:users' => "Please select the users",
+	'login_by_email:settings:whitelist:users:help' => "Search for a user and select them from the list.",
+	
 	// enter code page
 	'login_by_email:code:title' => "Enter login code",
 	'login_by_email:code:description' => "An e-mail has been sent to you, please check your inbox for a login code.

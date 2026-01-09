@@ -20,6 +20,14 @@ if (!$user instanceof \ElggUser) {
 	return elgg_error_response(elgg_echo('login:baduser'), REFERRER, ELGG_HTTP_UNAUTHORIZED);
 }
 
+$whitelist = elgg_get_plugin_setting('whitelist_users', 'login_by_email');
+if (!empty($whitelist)) {
+	$whitelist = json_decode($whitelist, true);
+	if (!in_array($user->guid, $whitelist)) {
+		return elgg_error_response(elgg_echo('login:baduser'), REFERRER, ELGG_HTTP_UNAUTHORIZED);
+	}
+}
+
 $site = elgg_get_site_entity();
 $session = elgg_get_session();
 
