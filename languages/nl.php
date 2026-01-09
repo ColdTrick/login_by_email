@@ -1,10 +1,16 @@
 <?php
 /**
- * This file was created by Translation Editor v13.1.1
- * On 2024-06-06 15:01
+ * This file was created by Translation Editor v14.0.4
+ * On 2026-01-09 14:33
  */
 
 return array (
+  'login_by_email:settings:disable_classic_login' => 'Klassieke aanmeldmethode uitschakelen',
+  'login_by_email:settings:disable_classic_login:help' => 'Het is niet meer mogelijk je aan te melden met gebruikersnaam/wachtwoord',
+  'login_by_email:settings:whitelist' => 'Whitelist instellingen',
+  'login_by_email:settings:whitelist:description' => 'Indien er gebruikers worden geselecteerd kunnen alleen die gebruikers gebruik maken van het aanmelden middels e-mail. Indien er geen gebruikers zijn geselecteerd kan iederee gebruik maken van het aanmelden via e-mail.',
+  'login_by_email:settings:whitelist:users' => 'Selecteer hier de gebruikers',
+  'login_by_email:settings:whitelist:users:help' => 'Zoek naar een gebruiker en selecteer die uit de lijst.',
   'login_by_email:menu:login:new_request' => 'Nieuwe aanmeldcode aanvragen',
   'login_by_email:settings:code_validity' => 'Aanmeldcode geldigheid timeout',
   'login_by_email:settings:code_validity:help' => 'Hoe lang (in minuten) is de aanmeldcode/-link geldig',
