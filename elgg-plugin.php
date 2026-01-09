@@ -1,5 +1,6 @@
 <?php
 
+use ColdTrick\LoginByEmail\Bootstrap;
 use ColdTrick\LoginByEmail\Controllers\Confirm;
 use ColdTrick\LoginByEmail\Notifications\RequestLoginCodeHandler;
 use Elgg\Router\Middleware\LoggedOutGatekeeper;
@@ -9,8 +10,10 @@ return [
 	'plugin' => [
 		'version' => '1.0',
 	],
+	'bootstrap' => Bootstrap::class,
 	'settings' => [
 		'code_validity' => 5,
+		'disable_classic_login' => 1,
 	],
 	'actions' => [
 		'login_by_email/code' => ['access' => 'logged_out'],
@@ -34,6 +37,14 @@ return [
 			],
 			'walled' => false,
 		],
+		'default:login_by_email:request_link' => [
+			'path' => 'login_by_email/request_link',
+			'resource' => 'login_by_email/request_link',
+			'middleware' => [
+				LoggedOutGatekeeper::class,
+			],
+			'walled' => false,
+		],
 	],
 	'events' => [
 		'register' => [
@@ -43,8 +54,8 @@ return [
 			],
 		],
 		'view_vars' => [
-			'input/form' => [
-				'\ColdTrick\LoginByEmail\Views::loginFormVars' => [],
+			'forms/login' => [
+				'\ColdTrick\LoginByEmail\Views::preventClassicLoginForm' => [],
 			],
 		],
 	],

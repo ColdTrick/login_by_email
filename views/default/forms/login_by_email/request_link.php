@@ -1,6 +1,6 @@
 <?php
 /**
- * Elgg login form
+ * Request a login URL/code by e-mail
  */
 
 echo elgg_view_field([
@@ -10,18 +10,6 @@ echo elgg_view_field([
 	'autofocus' => true,
 	'required' => true,
 ]);
-
-if (get_input('classic_login')) {
-	echo elgg_view_field([
-		'#type' => 'password',
-		'#label' => elgg_echo('password'),
-		'name' => 'password',
-		'required' => true,
-		'autocomplete' => 'current-password',
-	]);
-}
-
-echo elgg_view('login/extend', $vars);
 
 if (isset($vars['returntoreferer'])) {
 	echo elgg_view_field([
@@ -37,9 +25,9 @@ $footer = elgg_view_field([
 	'fields' => [
 		[
 			'#type' => 'submit',
-			'text' => elgg_echo('login'),
+			'text' => elgg_echo('request'),
 		],
 	],
 ]);
-$footer .= elgg_view_menu('login');
+
 elgg_set_form_footer($footer);

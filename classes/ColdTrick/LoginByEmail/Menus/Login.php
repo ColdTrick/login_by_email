@@ -17,7 +17,7 @@ class Login {
 	 * @return null|MenuItems
 	 */
 	public static function removePasswordReset(\Elgg\Event $event): ?MenuItems {
-		if (get_input('classic_login')) {
+		if (!(bool) elgg_get_plugin_setting('disable_classic_login', 'login_by_email')) {
 			return null;
 		}
 		
@@ -37,7 +37,7 @@ class Login {
 	 * @return null|MenuItems
 	 */
 	public static function register(\Elgg\Event $event): ?MenuItems {
-		if (elgg_get_current_route_name() !== 'default:login_by_email:code') {
+		if (str_starts_with(elgg_get_current_route_name(), 'default:login_by_email')) {
 			return null;
 		}
 		
@@ -45,9 +45,9 @@ class Login {
 		$result = $event->getValue();
 		
 		$result[] = \ElggMenuItem::factory([
-			'name' => 'login',
+			'name' => 'request_link',
 			'text' => elgg_echo('login_by_email:menu:login:new_request'),
-			'href' => elgg_generate_url('account:login'),
+			'href' => elgg_generate_url('default:login_by_email:request_link'),
 		]);
 		
 		return $result;

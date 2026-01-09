@@ -7,6 +7,8 @@ return [
 	// plugin settings
 	'login_by_email:settings:code_validity' => "Login code validity timeout",
 	'login_by_email:settings:code_validity:help' => "How long (in minutes) is the login code/link valid",
+	'login_by_email:settings:disable_classic_login' => "Disable classic login method",
+	'login_by_email:settings:disable_classic_login:help' => "No longer allow login by username/password",
 	
 	// enter code page
 	'login_by_email:code:title' => "Enter login code",
