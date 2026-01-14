@@ -1,7 +1,7 @@
 Login by e-mail
 ===============
 
-![Elgg 5.1](https://img.shields.io/badge/Elgg-5.1-green.svg)
+![Elgg 6.3](https://img.shields.io/badge/Elgg-6.3-green.svg)
 ![Lint Checks](https://github.com/ColdTrick/login_by_email/actions/workflows/lint.yml/badge.svg?event=push)
 [![Latest Stable Version](https://poser.pugx.org/coldtrick/login_by_email/v/stable.svg)](https://packagist.org/packages/coldtrick/login_by_email)
 [![License](https://poser.pugx.org/coldtrick/login_by_email/license.svg)](https://packagist.org/packages/coldtrick/login_by_email)
