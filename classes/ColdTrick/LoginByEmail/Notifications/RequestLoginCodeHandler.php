@@ -47,7 +47,7 @@ class RequestLoginCodeHandler extends InstantNotificationEventHandler {
 		return elgg_echo('login_by_email:notification:request_link:message', [
 			$site->getDisplayName(),
 			elgg_http_get_signed_url($link, "+{$code_validity} minutes"),
-			$code,
+			elgg_format_element('span', ['style' => 'font-size: 2rem; line-height: 2rem;'], $code),
 		]);
 	}
 	
