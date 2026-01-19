@@ -30,7 +30,7 @@ class Confirm {
 		}
 		
 		try {
-			elgg_login($user, true);
+			elgg_login($user);
 		} catch (LoginException $e) {
 			return elgg_error_response($e->getMessage());
 		}
