@@ -35,5 +35,4 @@ $footer = elgg_view_field([
 		],
 	],
 ]);
-$footer .= elgg_view_menu('login');
 elgg_set_form_footer($footer);
