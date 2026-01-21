@@ -9,7 +9,7 @@ use Elgg\Router\Middleware\SignedRequestGatekeeper;
 
 return [
 	'plugin' => [
-		'version' => '1.0',
+		'version' => '2.0',
 	],
 	'bootstrap' => Bootstrap::class,
 	'settings' => [
