@@ -10,10 +10,8 @@ if (!$session->has('login_by_email_code') || !$session->has('login_by_email_user
 	throw new BadRequestException();
 }
 
-$shell = elgg_get_config('walled_garden') ? 'walled_garden' : 'default';
-
 echo elgg_view_page(elgg_echo('login_by_email:code:title'), [
 	'content' => elgg_view_form('login_by_email/code'),
 	'sidebar' => false,
 	'filter' => false,
-], $shell);
+], 'walled_garden');

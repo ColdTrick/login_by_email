@@ -1,6 +1,6 @@
 <?php
 
-use Elgg\Exceptions\LoginException;
+use Elgg\Exceptions\Http\LoginException;
 
 $code = (int) get_input('code');
 $persistent = (bool) get_input('persistent');

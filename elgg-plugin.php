@@ -68,7 +68,9 @@ return [
 	'notifications' => [
 		'user' => [
 			'user' => [
-				'request_login_code' => RequestLoginCodeHandler::class,
+				'request_login_code' => [
+					RequestLoginCodeHandler::class => [],
+				],
 			],
 		],
 	],
