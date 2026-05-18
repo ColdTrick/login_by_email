@@ -6,3 +6,5 @@ jobs:
   phpunit:
     name: Run PHPUnit test suites
     uses: ColdTrick/.github/.github/workflows/phpunit.yml@master
+    with:
+      elgg_major_version: 7
