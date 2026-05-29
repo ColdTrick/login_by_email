@@ -1,6 +1,10 @@
 Version history
 ===============
 
+3.0 (2026-05-29):
+
+- changed: updated for Elgg 7.0
+
 2.0 (2026-01-21):
 
 - added: plugin setting to allow/prevent classic login
