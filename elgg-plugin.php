@@ -2,6 +2,7 @@
 
 use ColdTrick\LoginByEmail\Bootstrap;
 use ColdTrick\LoginByEmail\Controllers\Confirm;
+use ColdTrick\LoginByEmail\Controllers\RequestLinkAction;
 use ColdTrick\LoginByEmail\Notifications\RequestLoginCodeHandler;
 use ColdTrick\LoginByEmail\PluginSettings;
 use Elgg\Router\Middleware\LoggedOutGatekeeper;
@@ -18,7 +19,10 @@ return [
 	],
 	'actions' => [
 		'login_by_email/code' => ['access' => 'logged_out'],
-		'login_by_email/request_link' => ['access' => 'logged_out'],
+		'login_by_email/request_link' => [
+			'access' => 'logged_out',
+			'controller' => RequestLinkAction::class,
+		],
 	],
 	'routes' => [
 		'default:login_by_email:code' => [

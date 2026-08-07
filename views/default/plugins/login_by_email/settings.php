@@ -27,8 +27,12 @@ if (!empty($users)) {
 }
 
 $whitelist = elgg_view('output/longtext', [
-	'value' => elgg_echo('login_by_email:settings:whitelist:description')
+	'value' => elgg_echo('login_by_email:settings:whitelist:description'),
 ]);
+
+$whitelist .= elgg_view_message('info', elgg_view('output/longtext', [
+	'value' => elgg_echo('login_by_email:settings:whitelist:admin'),
+]));
 
 $whitelist .= elgg_view_field([
 	'#type' => 'userpicker',

@@ -12,6 +12,7 @@ return [
 	
 	'login_by_email:settings:whitelist' => "Whitelist settings",
 	'login_by_email:settings:whitelist:description' => "When selecting users, only those users are allowed to use the login by e-mail feature. When no users are selected, all users are allowed to login by e-mail.",
+	'login_by_email:settings:whitelist:admin' => "Please note that site administrators are automatically whitelisted.",
 	'login_by_email:settings:whitelist:users' => "Please select the users",
 	'login_by_email:settings:whitelist:users:help' => "Search for a user and select them from the list.",
 	
